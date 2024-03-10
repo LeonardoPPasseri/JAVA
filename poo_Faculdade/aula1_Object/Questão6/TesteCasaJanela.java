@@ -7,7 +7,11 @@ public class TesteCasaJanela {
 
         janela.cor = "verde";
         janela.material = "madeira";
+
         casa.cor = "Branco";
         casa.numero = 181;
+        casa.janela.cor = "dourado";
+        casa.janela.material = "Porcelana";
+        
     }
 }
