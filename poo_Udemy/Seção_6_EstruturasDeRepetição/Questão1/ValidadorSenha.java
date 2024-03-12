@@ -13,5 +13,6 @@ public class ValidadorSenha {
             }
         }while(senha != teste);
         System.out.println("Acesso Concedido");
+        sc.close();
     }
 }

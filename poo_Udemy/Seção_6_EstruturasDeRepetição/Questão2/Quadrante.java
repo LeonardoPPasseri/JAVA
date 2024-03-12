@@ -23,5 +23,6 @@ public class Quadrante {
                 System.out.println("Quarto");
             }
         } 
+        sc.close();
     }
 }

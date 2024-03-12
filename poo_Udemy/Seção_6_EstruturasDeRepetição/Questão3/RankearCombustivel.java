@@ -43,5 +43,6 @@ public class RankearCombustivel {
         for(int c=0;c<length;c++){
             System.out.println(lista[c].combustivel + ": " + lista[c].clientes);
         }
+        sc.close();
     }
 }
