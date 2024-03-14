@@ -1,4 +1,4 @@
-package poo_Faculdade.aula2_Logica.Questão4;
+package poo_Faculdade.aula2_Logica_Array.Questão4;
 
 public class SomadorComExceção {
     int soma = 0;

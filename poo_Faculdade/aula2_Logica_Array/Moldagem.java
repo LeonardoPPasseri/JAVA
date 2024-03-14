@@ -1,4 +1,4 @@
-package poo_Faculdade.aula2_Logica;
+package poo_Faculdade.aula2_Logica_Array;
 
 public class Moldagem {
     short a,b;

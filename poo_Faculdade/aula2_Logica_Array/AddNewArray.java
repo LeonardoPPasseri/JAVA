@@ -1,4 +1,4 @@
-package poo_Faculdade.aula2_Logica;
+package poo_Faculdade.aula2_Logica_Array;
 //Aqui veremos como add um novo array a outro ja existente.
 
 public class AddNewArray {

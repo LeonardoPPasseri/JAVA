@@ -1,4 +1,4 @@
-package poo_Faculdade.aula2_Logica;
+package poo_Faculdade.aula2_Logica_Array;
 import java.util.Scanner;
 
 public class Construtores {
