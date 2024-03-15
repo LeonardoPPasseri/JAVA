@@ -53,7 +53,7 @@ public class ContaBancaria {
     }
 
     public String getSaldoFormatado(){
-        return ("" + getSaldo());
+        return (String.format("%.2f", getSaldo()) );
     }
 
     

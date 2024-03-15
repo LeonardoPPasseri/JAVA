@@ -4,13 +4,20 @@ public class Produto {
     String nome;
     int qtd;
     double preço;
-
+    public Produto(){
+        System.out.println("Digite o nome do produto:");
+        this.nome = sc.nextLine();
+        System.out.println("Digite o valor unitario do produto: ");
+        this.preço = sc.nextDouble();
+        System.out.println("Digite o quantidade no estoque: ");
+        this.qtd = sc.nextInt();
+    }
     Scanner sc = new Scanner(System.in);
 
     public void addEstoque(){
         System.out.print("Quanto vc desse produto será adicionado ao estoque? ");
         int add = sc.nextInt();
-        qtd += add;
+        qtd = qtd + add;
     }
     public void removerEstoque(){
         System.out.print("Quanto vc desse produto será removido do estoque? ");
@@ -21,9 +28,8 @@ public class Produto {
             qtd = qtd - rem;
         }
     }
-    public void info(){
-        double valor = qtd*preço;
-        System.out.println("Informação do produto: " + nome + ", R$" + preço +", " + qtd +" unidade(s), total: R$" + valor);
+    public String toString(){
+        return ("Informação do produto: " + nome + ", R$" + preço +", " + qtd +" unidade(s), total: R$" + qtd*preço);
     }
     
 }

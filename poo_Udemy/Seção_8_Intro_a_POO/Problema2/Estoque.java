@@ -6,10 +6,6 @@ public class Estoque {
         int escolha;
         Scanner sc = new Scanner(System.in);
         Produto X = new Produto();
-        System.out.println("Digite o nome do produto:");
-        X.nome = sc.nextLine();
-        System.out.println("Digite o valor unitario do produto: ");
-        X.preço = sc.nextDouble();
         System.out.println("==================================");
         System.out.println("0 para Sair");
         System.out.println("1 para adicionar ao estoque");
@@ -28,7 +24,7 @@ public class Estoque {
                     X.removerEstoque();
                     break;
                 case 3:
-                    X.info();
+                    System.out.println(X);
                     break;
                 case 0:
                     break;

@@ -20,7 +20,7 @@ public class teste {
                 case 2:
                     System.out.print("Digite o valor a ser depositado: ");
                     conta.depositar(sc.nextDouble());
-                    System.out.println("Saldo atualizado: R$ "+conta.getSaldoFormatado()); 
+                    System.out.println("Saldo atualizado: R$ "+ conta.getSaldoFormatado()); 
                     break;
                 case 3:
                     System.out.print("Digite o valor a ser retirado: ");
