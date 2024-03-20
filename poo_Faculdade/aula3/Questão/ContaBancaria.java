@@ -26,17 +26,16 @@ public class ContaBancaria {
 
     public String getDataFormatada(){
         String stringData = "";
-        if(dataAbertura.getDia() / 10 < 1 ){
+        if(dataAbertura.getDia() < 10){
             stringData += "0"+dataAbertura.getDia()+"/";
         }else{
             stringData += dataAbertura.getDia() + "/";
         }
-        if(dataAbertura.getMes() / 10 < 1 ){
+        if(dataAbertura.getMes() < 10 ){
             stringData += "0"+dataAbertura.getMes()+"/";
         }else{
             stringData += dataAbertura.getMes() + "/";
         }
-        
         return stringData + dataAbertura.getAno();
     }
 
