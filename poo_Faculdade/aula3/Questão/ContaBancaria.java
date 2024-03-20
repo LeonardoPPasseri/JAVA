@@ -9,7 +9,7 @@ public class ContaBancaria {
         dataAbertura.dia();
         dataAbertura.mes();
         dataAbertura.ano();
-        System.out.println("Data de criação da conta: " + getDataAberturaFormatada());
+        System.out.println("Data de criação da conta: " + getDataFormatada());
     }
 
     public void depositar(double valor){
@@ -24,7 +24,24 @@ public class ContaBancaria {
         }
     }
 
+    public String getDataFormatada(){
+        String stringData = "";
+        if(dataAbertura.getDia() / 10 < 1 ){
+            stringData += "0"+dataAbertura.getDia()+"/";
+        }else{
+            stringData += dataAbertura.getDia() + "/";
+        }
+        if(dataAbertura.getMes() / 10 < 1 ){
+            stringData += "0"+dataAbertura.getMes()+"/";
+        }else{
+            stringData += dataAbertura.getMes() + "/";
+        }
+        
+        return stringData + dataAbertura.getAno();
+    }
+
 //============================= get set
+
     public double getSaldo(){
         return saldo;
     }
@@ -37,19 +54,6 @@ public class ContaBancaria {
     }
     public void setDataAbertura(Data dataAbertura){
         this.dataAbertura = dataAbertura;
-    }
-    
-    public String getDataAberturaFormatada(){
-        int d = dataAbertura.getDia();
-        int m =dataAbertura.getMes();
-        if(d > 0 && d < 10 && m > 0 && m < 10 ){
-            return ("0"+dataAbertura.getDia() + "/" + "0" + dataAbertura.getMes() + "/" + dataAbertura.getAno());
-        }if(d > 0 && d < 10){
-            return ("0" + dataAbertura.getDia() + "/" + dataAbertura.getMes() + "/" + dataAbertura.getAno());
-        }if(m > 0 && m < 10){
-            return (dataAbertura.getDia() + "/" + "0" + dataAbertura.getMes() + "/" + dataAbertura.getAno());
-        }
-        return (dataAbertura.getDia() + "/" + dataAbertura.getMes() + "/" + dataAbertura.getAno());
     }
 
     public String getSaldoFormatado(){

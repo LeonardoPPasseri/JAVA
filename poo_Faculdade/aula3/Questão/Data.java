@@ -11,10 +11,10 @@ public class Data {
         do{
             System.out.print("Digite o dia da criação do banco: ");
             setDia(sc.nextInt());
-            if(dia < 1 || dia > 30){
+            if(dia < 1 || dia > 31){
                 System.out.println("ERRO!");
             }
-        }while(dia < 1 || dia > 30);
+        }while(dia < 1 || dia > 31);
     }
     public void mes(){
         do{
@@ -35,8 +35,11 @@ public class Data {
         }while(ano < 1808 || ano > 2024);
     }
 
+    
     //======================================= get set
     
+    
+
     public int getDia(){
         return dia;
     }
