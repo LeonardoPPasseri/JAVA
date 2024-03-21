@@ -1,4 +1,4 @@
-package poo_Faculdade.aula1_Object.Questão2;
+package poo_Faculdade.Aula1_Object.Questão2;
 
 public class Principal {
     public static void main(String[]args){

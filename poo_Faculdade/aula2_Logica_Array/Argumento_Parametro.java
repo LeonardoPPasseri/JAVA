@@ -1,4 +1,4 @@
-package poo_Faculdade.aula2_Logica_Array;
+package poo_Faculdade.Aula2_Logica_Array;
 
 public class Argumento_Parametro {
     int a;

@@ -1,4 +1,4 @@
-package poo_Faculdade.aula1_Object;
+package poo_Faculdade.Aula1_Object;
 
 public class MetodoOUFunção {
 	public static void main(String []args) {

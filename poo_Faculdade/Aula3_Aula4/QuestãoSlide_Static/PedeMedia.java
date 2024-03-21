@@ -1,4 +1,4 @@
-package poo_Faculdade.aula3.QuestãoSlide_Static;
+package poo_Faculdade.Aula3_Aula4.QuestãoSlide_Static;
 
 public class PedeMedia {
     public static void main(String[] args) {

@@ -4,7 +4,7 @@ public class Exemplo {
     
     public static void main(String[] args) {
         /*
-         for(<tipo> apelido : coleção){
+         for(<tipo> apelido : <nome_do_Vetor>){
             <comando 1>
             <comando 2>
          }

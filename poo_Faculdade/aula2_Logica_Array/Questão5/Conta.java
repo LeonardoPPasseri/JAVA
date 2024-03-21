@@ -1,4 +1,4 @@
-package poo_Faculdade.aula2_Logica_Array.Questão5;
+package poo_Faculdade.Aula2_Logica_Array.Questão5;
 
 public class Conta {
     double saldo;

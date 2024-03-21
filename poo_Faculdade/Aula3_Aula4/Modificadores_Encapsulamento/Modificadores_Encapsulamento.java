@@ -1,4 +1,4 @@
-package poo_Faculdade.aula3.Modificadores_Encapsulamento;
+package poo_Faculdade.Aula3_Aula4.Modificadores_Encapsulamento;
 /*
 
 "private" é um modificador que não permite que os atributos sejam alterados fora da class

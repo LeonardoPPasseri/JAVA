@@ -1,4 +1,4 @@
-package poo_Faculdade.aula3.Modificadores_Encapsulamento;
+package poo_Faculdade.Aula3_Aula4.Modificadores_Encapsulamento;
 
 public class Pessoa {
     private String nome;

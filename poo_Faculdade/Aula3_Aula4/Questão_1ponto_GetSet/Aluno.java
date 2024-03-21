@@ -1,4 +1,4 @@
-package poo_Faculdade.aula3.Questão_1ponto_GetSet;
+package poo_Faculdade.Aula3_Aula4.Questão_1ponto_GetSet;
 import java.util.Scanner;
 public class Aluno {
     private String nome;

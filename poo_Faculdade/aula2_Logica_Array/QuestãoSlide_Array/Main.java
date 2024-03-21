@@ -1,4 +1,4 @@
-package poo_Faculdade.aula2_Logica_Array.QuestãoSlide_Array;
+package poo_Faculdade.Aula2_Logica_Array.QuestãoSlide_Array;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {

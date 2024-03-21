@@ -1,4 +1,4 @@
-package poo_Faculdade.aula1_Object.Questão4;
+package poo_Faculdade.Aula1_Object.Questão4;
 
 public class TestaCasa {
     public static void main(String[]args){

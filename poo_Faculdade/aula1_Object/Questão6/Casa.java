@@ -1,4 +1,4 @@
-package poo_Faculdade.aula1_Object.Questão6;
+package poo_Faculdade.Aula1_Object.Questão6;
 
 public class Casa {
     String cor;

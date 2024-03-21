@@ -1,4 +1,4 @@
-package poo_Faculdade.aula2_Logica_Array.Questão3;
+package poo_Faculdade.Aula2_Logica_Array.Questão3;
 
 public class Calcula {
     int soma = 0;
