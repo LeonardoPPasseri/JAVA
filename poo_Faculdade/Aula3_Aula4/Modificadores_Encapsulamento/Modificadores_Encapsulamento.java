@@ -11,6 +11,6 @@ Essa estratégia é chamada de "Encapsulamento"
 
 */
 public class Modificadores_Encapsulamento {
-    private String nome;
-    private int idade;
+  //  private String nome;
+  //  private int idade;
 }

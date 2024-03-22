@@ -4,7 +4,7 @@ public class PesoMedio extends Lutador {
     public PesoMedio(String nome,int idade,double peso){
         super(nome,idade,peso);
     }
-    int id = 3;
+    static int id = 3;
 
     public String categoriaLutador(){
         return "PesoMedio";
