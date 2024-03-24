@@ -7,7 +7,6 @@ public class Lutador {
     private String nome;
     private int idade;
     private double peso;
-    String lut = (getNome() + "/" + getIdade() + "/" + getPeso());
 
     public Lutador(String nome,int idade,double peso){
         this.idade = idade;
@@ -28,11 +27,10 @@ public class Lutador {
 
     public static void sorteioLutas(Lutador lutadores[], int lutador){
         String className = lutadores[lutador].getClass().getSimpleName();
-
+        Lutador lutPrincipal = lutadores[lutador];
         List <Lutador> todosLut = new ArrayList<>();
         for(int i=0;i<lutadores.length;i++){
             todosLut.add(lutadores[i]);
-
         }
         List <Lutador> qualificados = new ArrayList<>();
         
@@ -45,13 +43,14 @@ public class Lutador {
         }
     
         int escolhido = (int)(Math.random() * qualificados.size());
-        System.out.println(escolhido);
+        //System.out.println(escolhido);
         Lutador oponente = qualificados.get(escolhido);
+        
         System.out.println("===========================");
-        System.out.println(lutadores[lutador].getNome() + "/" + lutadores[lutador].getIdade() + "/" + lutadores[lutador].getPeso());
+        System.out.println(lutPrincipal);
         System.out.println("============= vs =============");
-        System.out.println(oponente.getNome() + "/" + oponente.getIdade() + "/" + oponente.getPeso());
-        //System.out.println(oponente.lut);
+        System.out.println(oponente);
+      
     }
 
     public String getNome(){

@@ -21,4 +21,8 @@ public class MeioPesado extends Lutador{
     public static int getId() {
         return id;
     }
+
+    public String toString(){
+        return (getNome() + "/" + getIdade() + "/" + getPeso());
+    }
 }

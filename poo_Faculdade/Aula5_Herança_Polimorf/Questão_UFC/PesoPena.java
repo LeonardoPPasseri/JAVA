@@ -18,5 +18,8 @@ public class PesoPena extends Lutador{
     public double getPeso(){
         return super.getPeso();
     }
+    public String toString(){
+        return (getNome() + "/" + getIdade() + "/" + getPeso());
+    }
 }
 

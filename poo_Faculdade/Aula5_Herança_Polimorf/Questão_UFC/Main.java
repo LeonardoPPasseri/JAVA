@@ -2,7 +2,7 @@ package poo_Faculdade.Aula5_Herança_Polimorf.Questão_UFC;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Lutador[] lutadores = new Lutador[4];
+        Lutador[] lutadores = new Lutador[2];
      //   Lutador objeto = new  Lutador(null, 0,0);
         Scanner sc = new Scanner(System.in);
         String nome;int idade;double peso;
@@ -26,16 +26,15 @@ public class Main {
             }else{
                 System.out.println("Desclassificado");
             }
-            
         }
         for(Lutador lutador : lutadores){
-            String lut = (lutador.getNome() + "/" + lutador.getIdade() + "/" + lutador.getPeso());
-            System.out.println(lut);
+            System.out.println(lutador);
         }
+
         System.out.println("Escolha entre 0 a " + (lutadores.length-1));
         int escolha = sc.nextInt();
         Lutador.possiveisLutas(lutadores, escolha);
         Lutador.sorteioLutas(lutadores,escolha);
-       sc.close();
+        sc.close();
     }
 }
