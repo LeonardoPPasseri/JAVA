@@ -4,7 +4,7 @@ public class MeioPesado extends Lutador{
     public MeioPesado(String nome,int idade,double peso){
         super(nome,idade,peso);
     }
-    static int id = 2;
+     private final int ID = 2;
 
     public String categoriaLutador(){
         return "MeioPesado";
@@ -18,8 +18,8 @@ public class MeioPesado extends Lutador{
     public double getPeso(){
         return super.getPeso();
     }
-    public static int getId() {
-        return id;
+    public int getID() {
+        return ID;
     }
 
     public String toString(){

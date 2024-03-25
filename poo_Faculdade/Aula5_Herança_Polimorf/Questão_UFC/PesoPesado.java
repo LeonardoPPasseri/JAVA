@@ -5,7 +5,7 @@ public class PesoPesado extends Lutador {
     public PesoPesado(String nome,int idade,double peso){
         super(nome,idade,peso);
     }
-    static int id = 1;
+    private final int ID = 1;
     
     public String categoriaLutador(){
         return "PesoPesado";
@@ -21,5 +21,8 @@ public class PesoPesado extends Lutador {
     }
     public String toString(){
         return (getNome() + "/" + getIdade() + "/" + getPeso());
+    }
+    public int getID() {
+        return ID;
     }
 }

@@ -1,6 +1,6 @@
 package poo_Udemy.Seção_12_Enumeração;
 import java.util.Date;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Pedido {
     private Integer id;
@@ -14,6 +14,7 @@ public class Pedido {
         this.momento = momento;
         this.status = status;
     }
+    
     public Integer getId() {
         return id;
     }
