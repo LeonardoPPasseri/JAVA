@@ -14,3 +14,4 @@ public class TestaCasa {
         System.out.println("A casa de número " + b.numero + " tem cor " + b.cor);
     }
 }
+//
