@@ -1,4 +1,4 @@
-package poo_Faculdade.Provas.P1_2023_01.Questão1NãoTerminado;
+package poo_Faculdade.Provas.P1_2023_01.Questão1;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class Principal {
@@ -10,7 +10,6 @@ public class Principal {
         id = sc.nextLine();
         Biscoito inserido = new Biscoito(id);
         ArrayList<Object> recebido = new ArrayList<>();
-        ArrayList<Biscoito> listBis = new ArrayList<>();
         //recebido = Utils2.getList();
         if(Utils.existe(recebido, inserido)){
             
