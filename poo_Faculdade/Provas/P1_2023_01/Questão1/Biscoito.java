@@ -6,7 +6,7 @@ public class Biscoito {
     private int preço;
 
     Biscoito(String id){
-
+        this.id = id;
     }
     public String getId() {
         return id;
