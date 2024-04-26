@@ -14,4 +14,7 @@ public class Biscoito {
     public int getPreço() {
         return preço;
     }
+    public String toString(){
+        return id+cor+preço;
+    }
 }

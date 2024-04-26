@@ -3,7 +3,7 @@ package poo_Faculdade.Aula5_Herança_Polimorf.Questão_UFC;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Lutador {
+public abstract class Lutador {
     private String nome;
     private int idade;
     private double peso;

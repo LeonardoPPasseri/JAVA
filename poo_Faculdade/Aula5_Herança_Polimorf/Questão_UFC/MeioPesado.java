@@ -9,19 +9,6 @@ public class MeioPesado extends Lutador{
     public String categoriaLutador(){
         return "MeioPesado";
     }
-    public String getNome(){
-        return super.getNome();
-    }
-    public int getIdade(){
-        return super.getIdade();
-    }
-    public double getPeso(){
-        return super.getPeso();
-    }
-    public int getID() {
-        return ID;
-    }
-
     public String toString(){
         return (getNome() + "/" + getIdade() + "/" + getPeso());
     }

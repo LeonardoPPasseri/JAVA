@@ -12,7 +12,6 @@ public class Principal {
         ArrayList<Object> recebido = new ArrayList<>();
         //recebido = Utils2.getList();
         if(Utils.existe(recebido, inserido)){
-            
             for(Object lista : recebido){
                 if(lista instanceof Biscoito){
                     Biscoito biscoito = (Biscoito) lista;
@@ -28,13 +27,8 @@ public class Principal {
         
     }
     public Biscoito[] transformaListEmArray(ArrayList<Object> k){
-        int i = 0;
-        for(Object listaObj : k){
-            if(listaObj instanceof Biscoito){
-                i++;
-            }
-        }
-        Biscoito[] biscoitos = new Biscoito[i-1];
+
+        Biscoito[] biscoitos = new Biscoito[k.size()];
         for(Object listaObj : k){
             if(listaObj instanceof Biscoito){
                 for(int c=0;c<biscoitos.length;c++){
