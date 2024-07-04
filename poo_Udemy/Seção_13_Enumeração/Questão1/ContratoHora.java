@@ -1,4 +1,4 @@
-package poo_Udemy.Seção_12_Enumeração.Questão1;
+package poo_Udemy.Seção_13_Enumeração.Questão1;
 import java.util.Date;
 public class ContratoHora {
     private Date data;
