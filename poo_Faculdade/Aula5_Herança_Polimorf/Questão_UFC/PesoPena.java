@@ -9,9 +9,7 @@ public class PesoPena extends Lutador{
     public String categoriaLutador(){
         return "PesoPena";
     }
-    public String toString(){
-        return (getNome() + "/" + getIdade() + "/" + getPeso());
-    }
+    
 
 }
 

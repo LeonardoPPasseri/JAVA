@@ -9,7 +9,5 @@ public class MeioPesado extends Lutador{
     public String categoriaLutador(){
         return "MeioPesado";
     }
-    public String toString(){
-        return (getNome() + "/" + getIdade() + "/" + getPeso());
-    }
+    
 }

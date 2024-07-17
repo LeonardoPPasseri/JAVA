@@ -10,8 +10,6 @@ public class PesoPesado extends Lutador {
     public String categoriaLutador(){
         return "PesoPesado";
     }
-    public String toString(){
-        return (getNome() + "/" + getIdade() + "/" + getPeso());
-    }
+   
 
 }

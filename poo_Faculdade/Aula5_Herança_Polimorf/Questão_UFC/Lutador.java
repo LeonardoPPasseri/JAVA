@@ -64,4 +64,8 @@ public abstract class Lutador {
     public int getID() {
         return ID;
     }
+
+    public String toString(){
+        return (getNome() + "/" + getIdade() + "/" + getPeso());
+    }
 }
