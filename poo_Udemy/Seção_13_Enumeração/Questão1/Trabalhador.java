@@ -1,6 +1,5 @@
 package poo_Udemy.Seção_13_Enumeração.Questão1;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 public class Trabalhador {
     private String nome;
@@ -27,14 +26,13 @@ public class Trabalhador {
 
     public Double renda(int ano,int mes){
         double soma = salario;
-        Calendar cal = Calendar.getInstance();
-       
         for (ContratoHora cont : contratos) {
-            cal.setTime(cont.getData());
-            int cont_ano = cal.get(Calendar.YEAR);
-            int cont_mes = 1 + cal.get(Calendar.MONTH);
+            int cont_ano = cont.getData().getYear(); //Pega a data do contrato e extrai o ano dela (yyyy)
+            int cont_mes = cont.getData().getMonthValue();
+            System.out.println(cont_ano);
+            System.out.println(cont_mes);
             if(cont_ano == ano && cont_mes == mes){
-                soma += getSalario();
+                soma += cont.valorTotal();
             }
         }
         return soma;

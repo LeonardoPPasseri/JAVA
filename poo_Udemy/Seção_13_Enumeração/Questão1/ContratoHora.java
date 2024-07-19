@@ -1,11 +1,11 @@
 package poo_Udemy.Seção_13_Enumeração.Questão1;
-import java.util.Date;
+import java.time.LocalDate;
 public class ContratoHora {
-    private Date data;
+    private LocalDate data;
     private Double valorHora;
     private Integer horas;
 
-    public ContratoHora(Date data,Double valorHora,int horas){
+    public ContratoHora(LocalDate data,Double valorHora,int horas){
         this.data = data;
         this.valorHora = valorHora;
         this.horas = horas;
@@ -16,10 +16,10 @@ public class ContratoHora {
 
 
     
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
     public Integer getHoras() {

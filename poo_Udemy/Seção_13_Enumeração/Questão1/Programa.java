@@ -1,17 +1,15 @@
 package poo_Udemy.Seção_13_Enumeração.Questão1;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Scanner;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 public class Programa {
     
     public static void main(String[] args) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); //Precisa ser com dd e yyyy minusculo
-
         Scanner sc = new Scanner(System.in);
         System.out.print("Qual é o departamento do funcionario: ");
         String departamento =sc.nextLine();
-        System.out.println("Digite os dados do trabalhador: ");
+        System.out.println("**Digite os dados do trabalhador** ");
         System.out.print("NOME: ");
         String nome = sc.nextLine();
         System.out.print("NIVEL: ");
@@ -22,11 +20,12 @@ public class Programa {
         System.out.print("Quantos contratos esse trabalhador possui? ");
         int num = sc.nextInt();
         Trabalhador novoTrabalhador = new Trabalhador(nome, salario, nivel, new Departamento(departamento));
+        DateTimeFormatter fmt01 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         for(int i =0;i<num;i++){
-            System.out.println("ENTRE COM O CONTRATO #" + i+1);
+            System.out.println("ENTRE COM O CONTRATO #" + (i+1));
             sc.nextLine();
             System.out.print("DATA (DD/MM/YYYY): ");
-            Date data = sdf.parse(sc.nextLine());
+            LocalDate data = LocalDate.parse(sc.nextLine(),fmt01);
             System.out.print("VALOR POR HORA: ");
             double valorHora = sc.nextDouble();
             System.out.print("DURAÇÃO(horas): ");

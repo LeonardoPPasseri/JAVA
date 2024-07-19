@@ -4,7 +4,8 @@ public class MeioPesado extends Lutador{
     public MeioPesado(String nome,int idade,double peso){
         super(nome,idade,peso);
     }
-     private final int ID = 2;
+     @SuppressWarnings("unused")
+    private final int ID = 2;
 
     public String categoriaLutador(){
         return "MeioPesado";

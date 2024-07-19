@@ -15,6 +15,7 @@ public class Principal {
         if(Utils.existe(listaObj,inserido)){
             System.out.println(listaObj.get(listaObj.indexOf(inserido)));
         }
+        sc.close();
     }
 
     public Produto[] transformaListEmArray(List<Object> k){
@@ -28,5 +29,6 @@ public class Principal {
         }
         return listProd.toArray(new Produto[0]);
     }
+    
 
 }
