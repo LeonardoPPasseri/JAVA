@@ -1,4 +1,4 @@
-package poo_Udemy.Seção_15_TratamentoDeExceções;
+package poo_Udemy.Seção_15_TratamentoDeExceções.Exceções_Personalizadas.Demostrações;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
