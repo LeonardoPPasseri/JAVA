@@ -5,7 +5,6 @@ public class Main {
         Lutador[] lutadores = new Lutador[3];
         Scanner sc = new Scanner(System.in);
         String nome;int idade;double peso;
-        
         for(int i=0; i<lutadores.length;i++){
             System.out.print("Nome: ");
             nome = sc.nextLine();
