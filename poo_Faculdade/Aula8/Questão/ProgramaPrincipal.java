@@ -2,7 +2,8 @@ package poo_Faculdade.Aula8.Questão;
 
 import java.util.ArrayList;
 import java.util.List;
-import poo_Faculdade.Provas.P1_2024_1.Questão_2.Produto;
+
+import poo_Faculdade.Provas.P1.P1_2024_1.Questão_2.Produto;
 
 public class ProgramaPrincipal {
     public static void main(String[] args) {
