@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Utils {
     
-    public static boolean existe (List x, Funcionario y){
+    public static boolean existe (List<Object> x, Funcionario y){
         if(x.contains(y)){
             return true;
         }else{

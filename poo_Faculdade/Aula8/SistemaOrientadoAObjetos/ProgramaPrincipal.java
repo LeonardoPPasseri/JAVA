@@ -75,8 +75,9 @@ public class ProgramaPrincipal {
                     break;
                 case 5:
                     double totalV = 0.0;
+                    a = new Imovel("Venda");
                     for (Imovel l : lista) {
-                        if (l.getStatus().equals("Venda")) {
+                        if (l.equals(a)) {
                             totalV += l.getValor();
                         }
                     }

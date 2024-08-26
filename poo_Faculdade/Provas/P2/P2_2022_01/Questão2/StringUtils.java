@@ -1,5 +1,6 @@
 package poo_Faculdade.Provas.P2.P2_2022_01.Questão2;
 
+
 public class StringUtils {
     
     public static String processa(String str){

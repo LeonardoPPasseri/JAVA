@@ -16,7 +16,6 @@ public class Aluno {
             Aluno a = (Aluno)o;
             return a.nome == nome;
         }else{
-            
             Aluno a = new Aluno(((String)o), 123);
             return a.nome == nome;
         }

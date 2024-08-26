@@ -12,6 +12,9 @@ public class Imovel {
     }
     public Imovel(){
     }
+    public Imovel(String status){
+        this.status = status;
+    }
     public Imovel(String nomeProp, String endereço, String status, double valor, int id) {
         this.nomeProp = nomeProp;
         this.endereço = endereço;
@@ -27,10 +30,20 @@ public class Imovel {
     @Override
     public boolean equals(Object o){
         Imovel a = (Imovel) o;
-        if(id == (((Imovel)a).id)){
+        if(a.getId() != 0){
+            System.out.println("Uso do equals com id");
+            if(id == (a.id)){
             return true;
+            }else{
+                return false;
+            }
         }else{
-            return false;
+            System.out.println("Uso do equals com venda");
+            if(status.equals(a.getStatus())){
+                return true;
+            }else{
+                return false;
+            }
         }
     }
 
