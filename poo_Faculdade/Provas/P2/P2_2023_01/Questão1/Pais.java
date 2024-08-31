@@ -1,4 +1,4 @@
-package poo_Faculdade.Provas.P2.P2_2023_01;
+package poo_Faculdade.Provas.P2.P2_2023_01.Questão1;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -7,5 +7,8 @@ public class Teste {
        System.out.println((int)(Math.random() * x.length));    
        // System.out.println((Math.random())); 
         }      
+        
+        int a = 9;
+        System.out.println("resultado : " + a + a);
     }
 }
