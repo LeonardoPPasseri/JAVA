@@ -1,4 +1,4 @@
-package Questão1;
+package poo_Faculdade.Provas.P2.P2_2023_01_Final.Questão1;
 
 public class LivroDeBiblioteca extends Livro{
     private boolean alugado;
