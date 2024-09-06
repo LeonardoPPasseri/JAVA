@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class Instituição {
     private String nome;
-    private ArrayList listaDeLivros = new ArrayList<>(); 
+    private ArrayList<Livro> listaDeLivros = new ArrayList<Livro>(); 
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -32,5 +32,4 @@ public class Instituição {
             }
         }
     }
-
 }

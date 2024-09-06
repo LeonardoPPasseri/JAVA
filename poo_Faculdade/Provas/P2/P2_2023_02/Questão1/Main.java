@@ -5,21 +5,20 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Carro> lista = new ArrayList<>();
+        List<Carro> listaCarros = new ArrayList<>();
         Carro a = new Carro();
         Carro b = new Carro();
-        lista.add(a);
-        lista.add(b);
-        
         Acessorio som = new Som("", 500);
-        Acessorio VidroEletrico = new VidroEletrico("", 250);
+        Acessorio vidroEletrico = new VidroEletrico("", 200);
 
         a.adicionar(som);
-        a.adicionar(VidroEletrico);
+        a.adicionar(vidroEletrico);
         b.adicionar(som);
-        b.adicionar(VidroEletrico);
+        b.adicionar(vidroEletrico);
 
-        Utils2.imprimirCustos(lista);
+        listaCarros.add(a);
+        listaCarros.add(b);
 
+        Utils2.imprimirCustos(listaCarros);
     }
 }

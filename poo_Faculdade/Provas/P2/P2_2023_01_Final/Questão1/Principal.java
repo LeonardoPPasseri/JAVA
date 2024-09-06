@@ -1,5 +1,6 @@
 package poo_Faculdade.Provas.P2.P2_2023_01_Final.Questão1;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Principal {
@@ -30,8 +31,8 @@ public class Principal {
         Livro teste = new LivroDeBiblioteca(0, false);
         teste.setISBN(ISBN); 
         if(inst.getListaDeLivros().contains(teste)){
-            Livro a = (Livro)(inst.getListaDeLivros()).get(inst.getListaDeLivros().indexOf(teste));
-            //q locura pprt
+            List<Livro> listaL = inst.getListaDeLivros();
+            Livro a = listaL.get(listaL.indexOf(teste));
             System.out.println(a.getNome() + a.getAutor() + a.getAno());
         }else{
             System.out.println("Não está nessa instituição");

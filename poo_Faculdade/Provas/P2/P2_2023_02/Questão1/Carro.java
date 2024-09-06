@@ -8,32 +8,29 @@ public class Carro {
     private String cor;
     private int ano;
     private String renavan;
-    private List<Acessorio>  lista = new ArrayList<>();
+    private List<Acessorio> lista = new ArrayList<>();
 
-    public void adicionar(Acessorio a){
-        lista.add(a);
+    public List<Acessorio> adicionar(Acessorio acessorio){
+        lista.add(acessorio);
+        return lista;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
-    }public int getAno() {
+    public int getAno() {
         return ano;
-    }public void setCor(String cor) {
-        this.cor = cor;
+    }public void setAno(int ano) {
+        this.ano = ano;
     }public String getCor() {
         return cor;
-    }public void setRenavan(String renavan) {
-        this.renavan = renavan;
+    }public void setCor(String cor) {
+        this.cor = cor;
+    }public String getPlaca() {
+        return placa;
+    }public void setPlaca(String placa) {
+        this.placa = placa;
     }public String getRenavan() {
         return renavan;
     }
-    public void setLista(List<Acessorio> lista) {
-        this.lista = lista;
-    }public List<Acessorio> getLista() {
+    public List<Acessorio> getLista() {
         return lista;
-    }public void setPlaca(String placa) {
-        this.placa = placa;
-    }public String getPlaca() {
-        return placa;
     }
 }

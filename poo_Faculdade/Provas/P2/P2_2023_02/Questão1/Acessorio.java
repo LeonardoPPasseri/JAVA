@@ -9,15 +9,15 @@ public abstract class Acessorio {
         this.preço = preço;
     }
 
-    public abstract double calcularImposto();
+    public abstract double calculaImposto();
 
     public String getMarca() {
         return marca;
     }public void setMarca(String marca) {
         this.marca = marca;
-    }public Double getPreço() {
+    }public double getPreço() {
         return preço;
-    }public void setPreço(Double preço) {
+    }public void setPreço(double preço) {
         this.preço = preço;
     }
 }

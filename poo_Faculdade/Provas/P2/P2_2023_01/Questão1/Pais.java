@@ -18,10 +18,12 @@ public class Pais {
         this.nome = nome;
         this.dimenção = dimensão;
     }
+
     @Override
     public String toString(){
         return "Codigo: " + codigo + " - Nome: "+ nome + " - população: " + população + " - dimensão: " + dimenção + " - Fronteira: "+ fronteira;
     }
+    
     @Override
     public boolean equals(Object o){
         Pais a = (Pais)o;
