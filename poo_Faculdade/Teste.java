@@ -21,6 +21,13 @@ public class Teste {
         j = ++c;
         System.out.println(c); //1
         System.out.println(j); //1
+
+        
         //========
+        /*
+        String str = "eu sou o leo";
+        String[] p = str.split(" ");
+        System.out.println(p.length);
+        */
     }
 }

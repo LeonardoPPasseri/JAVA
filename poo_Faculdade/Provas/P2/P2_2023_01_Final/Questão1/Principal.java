@@ -28,6 +28,7 @@ public class Principal {
         Scanner sc = new Scanner(System.in);
         System.out.print("Qual o ISBN do livro a ser consultado: ");
         String ISBN = sc.nextLine();
+
         Livro teste = new LivroDeBiblioteca(0, false);
         teste.setISBN(ISBN); 
         if(inst.getListaDeLivros().contains(teste)){
@@ -37,5 +38,6 @@ public class Principal {
         }else{
             System.out.println("Não está nessa instituição");
         }
+        sc.close();
     }
 }

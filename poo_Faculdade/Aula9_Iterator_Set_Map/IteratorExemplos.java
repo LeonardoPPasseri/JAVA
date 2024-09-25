@@ -9,7 +9,7 @@ import java.util.List;
 public class IteratorExemplos {
     public static void main(String[] args) {
         
-        List<Object> lista = new ArrayList<>();
+        List<String> lista = new ArrayList<>();
         lista.add("leonardo");
         lista.add("marcos");
         lista.add("jose");
@@ -18,7 +18,7 @@ public class IteratorExemplos {
         lista.add("luiz");
 
         //Toda lista possui o metodo iterator() pois essa classe faz parte do pacote Collection.
-        Iterator elementos = lista.iterator();//Objeto Iterator para percorrer a lista
+        Iterator<String> elementos = lista.iterator();//Objeto Iterator para percorrer a lista
         while(elementos.hasNext()){
             System.out.println(elementos.next());
         }

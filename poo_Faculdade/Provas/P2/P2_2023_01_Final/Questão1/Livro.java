@@ -12,9 +12,13 @@ public abstract class Livro {
 
     @Override
     public boolean equals(Object o){
-        Livro a = (Livro)o;
-        if(ISBN.equals(a.ISBN)){
-            return true;
+        if(o instanceof Livro){
+            Livro a = (Livro)o;
+            if(ISBN.equals(a.ISBN)){
+                return true;
+            }else{
+                return false;
+            }
         }else{
             return false;
         }
