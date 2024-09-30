@@ -1,4 +1,4 @@
-package poo_Udemy.Seção_15_Arquivos.LendoArquivosManualmente;
+package LendoArquivosManualmente;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

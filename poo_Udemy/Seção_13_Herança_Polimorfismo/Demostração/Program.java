@@ -2,6 +2,7 @@ package poo_Udemy.Seção_13_Herança_Polimorfismo.Demostração;
 
 public class Program {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
 		Account acc = new Account(1001, "Alex", 0.0);
