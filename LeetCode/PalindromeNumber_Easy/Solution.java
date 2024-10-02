@@ -1,4 +1,4 @@
-package Desafios.LeetCode.PalindromeNumber_Easy;
+package LeetCode.PalindromeNumber_Easy;
 
 class Solution {
     /*

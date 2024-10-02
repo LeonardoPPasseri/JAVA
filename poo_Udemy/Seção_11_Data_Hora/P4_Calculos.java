@@ -28,7 +28,7 @@ public class P4_Calculos {
         System.out.println("Diferença entre d03 e pastWeekInstant: " + t1.toDays());
 
         Duration t2 = Duration.between(d02, horaAdiantadaLocalDateTime);
-        System.out.println("Diferença entre d02 e horaAdiantadaLocalDateTime: " + t2.toMillis());
+        System.out.println("Diferença entre d02 e horaAdiantadaLocalDateTime: " + t2.toDays());
 
     }
 }

@@ -1,4 +1,4 @@
-package Desafios.LeetCode.NodeSum_Medium;
+package LeetCode.NodeSum_Medium;
 
 public class ListNode {
     int val;

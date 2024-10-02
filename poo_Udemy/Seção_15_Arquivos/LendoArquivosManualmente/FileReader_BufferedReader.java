@@ -28,7 +28,6 @@ public class FileReader_BufferedReader {
                 System.out.println(line);
                 line = br.readLine();
             }
-
         } catch (IOException e) {
             System.out.println("Erro: " + e.getMessage());
         }finally{

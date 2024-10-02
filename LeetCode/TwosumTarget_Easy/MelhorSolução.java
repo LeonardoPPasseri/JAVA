@@ -1,4 +1,4 @@
-package Desafios.LeetCode.TwosumTarget_Easy;
+package LeetCode.TwosumTarget_Easy;
 
 import java.util.Arrays;
 import java.util.HashMap;
