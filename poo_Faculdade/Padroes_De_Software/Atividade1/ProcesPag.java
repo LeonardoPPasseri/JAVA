@@ -1,11 +1,8 @@
 package poo_Faculdade.Padroes_De_Software.Atividade1;
 
 public class ProcesPag {
-    public float valor;
-
     public boolean VerificacaoPag(float valor){
         if(valor > 0){
-            this.valor = valor;
             System.out.println("Pagamento de R$"+ valor +" realizado com sucesso!");
             return true;
         }else{

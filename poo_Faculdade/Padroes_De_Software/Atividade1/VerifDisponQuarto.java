@@ -5,7 +5,6 @@ public class VerifDisponQuarto {
 
     public boolean dispQuarto(String hotel, int quarto){
         if(disponibilidade){
-            disponibilidade = false;
             System.out.println("Hotel "+hotel+"/quarto n°"+quarto+" reservado com sucesso!");
             return true;
         }else{
