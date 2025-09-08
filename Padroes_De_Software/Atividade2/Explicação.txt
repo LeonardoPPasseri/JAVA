@@ -1,0 +1,2 @@
+Primeiro, o desenvolvedor deve criar as classes concretas BotaoUbuntu e JanelaUbuntu, que implementarão as interfaces IBotao e IJanela, respectivamente. Em seguida, deve ser criada a classe concreta FactoryUbuntu, que implementa a interface IFactory. Por fim, basta atualizar a classe cliente permitindo que o sistema seja instanciado também no padrão Ubuntu.
+

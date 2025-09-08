@@ -1,4 +1,4 @@
-package poo_Faculdade.Padroes_De_Software.Atividade1;
+package Padroes_De_Software.Atividade1;
 
 public class ReservaFacade {
     private ProcesPag procesPag;

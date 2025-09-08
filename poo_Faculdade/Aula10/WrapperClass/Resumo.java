@@ -9,7 +9,7 @@ public class Resumo {
     //double -> Double
 
     public static void main(String[] args) {
-        List<Integer> listaI = new ArrayList();
+        List<Integer> listaI = new ArrayList<>();
         //List<int> listaI2 = new ArrayList<>(); "Syntax error, insert "Dimensions" to complete ReferenceType"
         listaI.add(3);
         listaI.add(4);
