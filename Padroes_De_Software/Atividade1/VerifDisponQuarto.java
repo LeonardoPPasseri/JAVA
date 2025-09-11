@@ -2,14 +2,21 @@ package Padroes_De_Software.Atividade1;
 
 public class VerifDisponQuarto {
     private boolean disponibilidade = true;
+    private String hotel;
+    private int quarto;
 
-    public boolean dispQuarto(String hotel, int quarto){
+    public boolean isDisponivel(String hotel, int quarto) {
         if(disponibilidade){
-            System.out.println("Hotel "+hotel+"/quarto n°"+quarto+" reservado com sucesso!");
+            this.hotel = hotel;
+            this.quarto = quarto;
             return true;
         }else{
             System.out.println("Quarto indisponivel");
             return disponibilidade = false;
         }
+    }
+
+    public void reservarQuarto() {
+        System.out.println("Hotel "+ hotel +"/quarto n°"+quarto+" reservado com sucesso!");
     }
 }

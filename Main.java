@@ -1,51 +1,38 @@
-abstract class Relatorio {
-    //Template Method
-    public final void gerarRelatorio() {
-        buscarDados();
-        processarDados();
-        exportar(); // cada subclasse implementa do seu jeito
+abstract class BebidaQuente {
+    // Template Method
+    public final void prepararReceita() {
+        ferverAgua();
+        preparar();
+        despejarNoCopo();
+        adicionarCondimentos();
     }
-    protected abstract void buscarDados();
-    protected abstract void processarDados();
-    protected abstract void exportar();
+    
+    private void ferverAgua() {
+        System.out.println("Fervendo a água...");
+    }
+    private void despejarNoCopo() {
+        System.out.println("Despejando na xícara...");
+    }
+    protected abstract void preparar();
+    protected abstract void adicionarCondimentos();
 }
 
-// Implementação concreta: Relatório PDF
-class RelatorioPDF extends Relatorio {
-    protected void buscarDados() {
-        System.out.println("Buscando dados do banco para o PDF...");
+class Cafe extends BebidaQuente {
+    @Override
+    protected void preparar() {
+        System.out.println("Passando o café no filtro...");
     }
-    protected void processarDados() {
-        System.out.println("Processando dados para o PDF...");
-    }
-    protected void exportar() {
-        System.out.println("Exportando relatório em PDF.");
+
+    @Override
+    protected void adicionarCondimentos() {
+        System.out.println("Adicionando açúcar e leite...");
     }
 }
-
-// Implementação concreta: Relatório CSV
-class RelatorioCSV extends Relatorio {
-    protected void buscarDados() {
-        System.out.println("Buscando dados do banco para o CSV...");
-    }
-    protected void processarDados() {
-        System.out.println("Processando dados para o CSV...");
-    }
-    protected void exportar() {
-        System.out.println("Exportando relatório em CSV.");
-    }
-}
-
-// Uso
-public class Main {
+class Main {
     public static void main(String[] args) {
-        Relatorio pdf = new RelatorioPDF();
-        Relatorio csv = new RelatorioCSV();
+        BebidaQuente cafe = new Cafe();
 
-        System.out.println("\n--- Gerando Relatório PDF ---");
-        pdf.gerarRelatorio();
-
-        System.out.println("\n--- Gerando Relatório CSV ---");
-        csv.gerarRelatorio();
+        System.out.println("Preparando café:");
+        cafe.prepararReceita();
     }
 }
