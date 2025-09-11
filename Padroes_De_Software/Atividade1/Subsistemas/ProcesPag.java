@@ -1,4 +1,4 @@
-package Padroes_De_Software.Atividade1;
+package Padroes_De_Software.Atividade1.Subsistemas;
 
 public class ProcesPag {
     private double valor;

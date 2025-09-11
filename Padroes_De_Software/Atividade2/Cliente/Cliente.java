@@ -1,3 +1,10 @@
+package Cliente;
+
+import Factory.FactoryMac;
+import Factory.FactoryWin;
+import Factory.Ifactory;
+import Produtos.Ibotao;
+import Produtos.Ijanela;
 
 public class Cliente{
     public static void main(String[] args) {

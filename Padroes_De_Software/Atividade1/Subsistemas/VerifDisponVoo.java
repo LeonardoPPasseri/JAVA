@@ -1,4 +1,4 @@
-package Padroes_De_Software.Atividade1;
+package Padroes_De_Software.Atividade1.Subsistemas;
 
 public class VerifDisponVoo {
     private boolean disponibilidade = true;
