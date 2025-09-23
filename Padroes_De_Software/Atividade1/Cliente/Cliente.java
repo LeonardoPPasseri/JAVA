@@ -1,6 +1,6 @@
 package Padroes_De_Software.Atividade1.Cliente;
 
-import Padroes_De_Software.Atividade1.Facade.ReservaFacade;
+import Padroes_De_Software.Atividade1.Subsistemas_Facade.ReservaFacade;
 
 public class Cliente{
     public static void main(String[] args){

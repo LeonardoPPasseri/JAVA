@@ -1,14 +1,14 @@
-package Padroes_De_Software.Atividade1.Subsistemas;
+package Padroes_De_Software.Atividade1.Subsistemas_Facade;
 
 public class VerifDisponCarro {
     private boolean disponibilidade = true;
     private String cidade;
 
-    public void ReservarCarro(){
+    protected void ReservarCarro(){
         System.out.println("Carro alugado em " + cidade);
     }
 
-    public boolean isDisponivel(String cidade) {
+    protected boolean isDisponivel(String cidade) {
         if(disponibilidade){
             this.cidade = cidade;
             return true;

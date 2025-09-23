@@ -1,9 +1,4 @@
-package Padroes_De_Software.Atividade1.Facade;
-
-import Padroes_De_Software.Atividade1.Subsistemas.ProcesPag;
-import Padroes_De_Software.Atividade1.Subsistemas.VerifDisponCarro;
-import Padroes_De_Software.Atividade1.Subsistemas.VerifDisponQuarto;
-import Padroes_De_Software.Atividade1.Subsistemas.VerifDisponVoo;
+package Padroes_De_Software.Atividade1.Subsistemas_Facade;
 
 public class ReservaFacade {
     private VerifDisponVoo voo;

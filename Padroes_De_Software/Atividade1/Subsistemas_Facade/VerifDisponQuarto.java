@@ -1,11 +1,11 @@
-package Padroes_De_Software.Atividade1.Subsistemas;
+package Padroes_De_Software.Atividade1.Subsistemas_Facade;
 
 public class VerifDisponQuarto {
     private boolean disponibilidade = true;
     private String hotel;
     private int quarto;
 
-    public boolean isDisponivel(String hotel, int quarto) {
+    protected boolean isDisponivel(String hotel, int quarto) {
         if(disponibilidade){
             this.hotel = hotel;
             this.quarto = quarto;
@@ -16,7 +16,7 @@ public class VerifDisponQuarto {
         }
     }
 
-    public void reservarQuarto() {
+    protected void reservarQuarto() {
         System.out.println("Hotel "+ hotel +"/quarto n°"+quarto+" reservado com sucesso!");
     }
 }
