@@ -46,11 +46,13 @@ public class Cliente {
         System.out.println("\n--- Concluir algumas tarefas ---");
         t1.concluir();
         t2.concluir();
+        System.out.println("--- Estado do Módulo 1 ---");
         modulo1.consultar();
 
         // CONCLUIR TODAS AS TAREFAS DO MÓDULO 2
         System.out.println("\n--- Concluir Módulo 2 ---");
         modulo2.concluir();
+        System.out.println("--- Estado do Módulo 2 ---");
         modulo2.consultar();
 
         // CONSULTAR PROJETO COMPLETO (ainda não concluído pois faltam tarefas da fase 2)
@@ -70,6 +72,7 @@ public class Cliente {
         // DESFAZER UMA TAREFA
         System.out.println("\n--- Cancelar conclusão de uma tarefa (Deploy inicial) ---");
         t7.cancelar();
+        System.out.println("--- Estado do Projeto após cancelamento ---");
         projeto.consultar();
     }
 }

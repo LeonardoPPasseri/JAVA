@@ -2,14 +2,14 @@ package Padroes_De_Software.Atividade4.Composite;
 
 public class Tarefa implements InterfaceTarefa {
     private String descricao;
-    private EstadoTarefa estado = new EstadoTarefa();
+    private Estado estado = Estado.NAO_CONCLUIDA;
     private ListaTarefas listaPai;
 
     public Tarefa(String descricao) {
         this.descricao = descricao;
     }
 
-    protected void setlista(ListaTarefas l) {
+    protected void setLista(ListaTarefas l) {
         this.listaPai = l;
     }
 
@@ -18,21 +18,22 @@ public class Tarefa implements InterfaceTarefa {
     }
 
     public void concluir() {
-        System.out.println("Executando " + descricao + ".... Concluida!");
-        estado.concluir();
+        estado = Estado.CONCLUIDA;
+        System.out.println("Executando " + descricao + ".... "+  estado);
         if (listaPai != null) {
             listaPai.atualizarEstado();
         }
     }
 
     public void cancelar() {
-        estado.cancelar();
+        estado = Estado.NAO_CONCLUIDA;
+        System.out.println("Cancelando " + descricao + ".... "+  estado);
         if (listaPai != null) {
             listaPai.atualizarEstado();
         }
     }
 
-    public EstadoTarefa getEstado(){
+    public Estado getEstado() {
         return estado;
     }
 }

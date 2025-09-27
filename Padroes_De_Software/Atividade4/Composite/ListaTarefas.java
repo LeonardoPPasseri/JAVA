@@ -3,9 +3,10 @@ package Padroes_De_Software.Atividade4.Composite;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class ListaTarefas implements InterfaceTarefa {
     private String descricao;
-    private EstadoTarefa estado = new EstadoTarefa();
+    private Estado estado = Estado.NAO_CONCLUIDA;
     private List<InterfaceTarefa> tarefas = new ArrayList<>();
     private ListaTarefas listaPai;
 
@@ -14,10 +15,10 @@ public class ListaTarefas implements InterfaceTarefa {
     }
 
     protected void atualizarEstado() {
-        if (!isconcluida()) {
-            estado.cancelar();
+        if (isConcluida()) {
+            estado = Estado.CONCLUIDA;
         } else {
-            estado.concluir();
+            estado = Estado.NAO_CONCLUIDA;
         }
         if (listaPai != null) {
             listaPai.atualizarEstado();
@@ -28,13 +29,12 @@ public class ListaTarefas implements InterfaceTarefa {
         for (InterfaceTarefa tarefa : tarefas) {
             tarefa.concluir();
         }
-        if (isconcluida()) {
-            estado.concluir();
-            System.out.println("Lista (" + descricao + "): " + getEstado());
-        }
+        atualizarEstado();
+        System.out.println("Lista (" + descricao + "): " + getEstado());
     }
+
     public void cancelar() {
-        estado.cancelar();
+        estado = Estado.NAO_CONCLUIDA;
         for (InterfaceTarefa tarefa : tarefas) {
             tarefa.cancelar();
         }
@@ -46,18 +46,21 @@ public class ListaTarefas implements InterfaceTarefa {
     public void add(InterfaceTarefa tarefa) {
         tarefas.add(tarefa);
         if (tarefa instanceof Tarefa) {
-            ((Tarefa) tarefa).setlista(this);
+            ((Tarefa) tarefa).setLista(this);
         } else if (tarefa instanceof ListaTarefas) {
-            ((ListaTarefas) tarefa).setlista(this);
+            ((ListaTarefas) tarefa).setLista(this);
         }
-    }
-    public void remove(InterfaceTarefa tarefa) {
-        tarefas.remove(tarefa);
+        atualizarEstado();
     }
 
-    protected boolean isconcluida() {
+    public void remove(InterfaceTarefa tarefa) {
+        tarefas.remove(tarefa);
+        atualizarEstado();
+    }
+
+    protected boolean isConcluida() {
         for (InterfaceTarefa t : tarefas) {
-            if (t.getEstado().toString().equals("nao concluida")) {
+            if (t.getEstado() == Estado.NAO_CONCLUIDA) {
                 return false;
             }
         }
@@ -71,11 +74,11 @@ public class ListaTarefas implements InterfaceTarefa {
         System.out.println("Lista (" + descricao + "): " + getEstado());
     }
 
-    public EstadoTarefa getEstado() {
+    public Estado getEstado() {
         return estado;
     }
-    private void setlista(ListaTarefas l) {
+
+    private void setLista(ListaTarefas l) {
         this.listaPai = l;
     }
-
 }
