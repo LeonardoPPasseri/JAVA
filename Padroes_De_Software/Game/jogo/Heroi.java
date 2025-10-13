@@ -1,13 +1,13 @@
-package jogo;
+package Padroes_De_Software.Game.jogo;
 
-import Personagem.Personagem;
+import Padroes_De_Software.Game.Personagem.Personagem;
 
 public class Heroi extends Personagem {
 
     public Heroi(String nome, Mediator m) {
         super(nome, 300 , 30, 10, m);
     }
-
+    
     public void atacar(int idInimigo) {
         Personagem ini = mediador.inimigos.get(idInimigo); // agora usa mediador da superclasse
         if (ini.getVida() == 0) {

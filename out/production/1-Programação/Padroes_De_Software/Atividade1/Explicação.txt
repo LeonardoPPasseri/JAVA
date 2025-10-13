@@ -1,0 +1,5 @@
+O uso do padrão Facade foi essencial para simplificar a experiência do usuário ao utilizar o software. Isso porque o cliente não precisa interagir diretamente com os diversos subsistemas implementados, como o processamento de pagamento, a reserva de voo, a reserva de quarto de hotel e o aluguel de carro. Nesse sentido, com o uso da fachada, o cliente lida apenas com uma interface única, que funciona como um "recepcionista", responsável por coordenar todos os processos necessários para a realização da viagem.
+
+Cliente(Dados do usuário) --> 
+ReservaFacade(Comunicação com os subsistemas) -->
+[ProcesPag()/VerifDispCarro()/VerifDispQuarto()/VerifDispVoo()](SubsistemasComplexos)

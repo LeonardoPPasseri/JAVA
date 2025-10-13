@@ -1,8 +1,8 @@
-package Personagem;
+package Padroes_De_Software.Game.Personagem;
 
 import java.util.Random;
 
-import jogo.Mediator;
+import Padroes_De_Software.Game.jogo.Mediator;
 
 public abstract class Personagem {
 	protected String nome;

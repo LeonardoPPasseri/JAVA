@@ -1,9 +1,7 @@
-package main;
+package Padroes_De_Software.Game.main;
 
-import jogo.Mediator;
-import jogo.Heroi;
-import Personagem.Personagem;
-import Rodadas.ListaDeRodadas;
+import Padroes_De_Software.Game.jogo.Mediator;
+import Padroes_De_Software.Game.jogo.Heroi;
 
 
 public class Cliente {
@@ -17,13 +15,9 @@ public class Cliente {
 		Heroi heroi = new Heroi("Artur",med);
 
 		//Preparação: cria os inimigos
-		med.prepararBatalha(heroi, 0);
-		
-		//Cria a lista de rodadas
-		ListaDeRodadas rodadas = new ListaDeRodadas(med);
+		med.iniciarJogo(heroi);
 
-		med.gerarRodada(rodadas);
-		
+		med.gerarRodada();
 		//Faz ataques
 
 		

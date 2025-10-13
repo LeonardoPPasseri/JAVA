@@ -1,7 +1,7 @@
-package Inimigos;
+package Padroes_De_Software.Game.Inimigos;
 
-import Personagem.Personagem;
-import jogo.Mediator;
+import Padroes_De_Software.Game.Personagem.Personagem;
+import Padroes_De_Software.Game.jogo.Mediator;
 
 public class Esqueleto extends Personagem implements Inimigo{
 	public String nome = "Esqueleto";
