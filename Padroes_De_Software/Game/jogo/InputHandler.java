@@ -13,7 +13,7 @@ public class InputHandler {
             try {
                 alvo = sc.nextInt();
                 if(alvo < 1 || alvo > qtdAlvos){
-                    System.out.println("Entrada inválida. Por favor, insira um número entre [1 - " + qtdAlvos + "]:");
+                    System.out.print("Entrada inválida. Por favor, insira um número entre [1 - " + qtdAlvos + "]:");
                 }else{
                     return alvo;
                 }

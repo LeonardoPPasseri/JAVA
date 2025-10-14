@@ -23,13 +23,13 @@ public class Mediator {
 
     public void heroiAtaca() {
         qtdInimigos = lutadores.size() - 1;
-        System.out.println("\nEscolha um inimigo para atacar [1 - 3]:");
+        System.out.print("\nEscolha um inimigo para atacar [1 - 3]:");
         alvo = InputHandler.readInt(qtdInimigos); // Não precisa ajustar pois o heroi é o lutador [0]. 
         Personagem inimigo = lutadores.get(alvo);
 
         while(inimigo.getVida() <= 0){
             System.out.println("O inimigo " + inimigo.getNome() + " já está morto! Escolha outro alvo.");
-            System.out.println("\nEscolha um inimigo para atacar [1 - 3]:");
+            System.out.print("\nEscolha um inimigo para atacar [1 - 3]:");
             alvo = InputHandler.readInt(qtdInimigos);
             inimigo = lutadores.get(alvo);
         }
@@ -37,6 +37,8 @@ public class Mediator {
         int dano = heroi.atacar();
         int danoReal = inimigo.defender(dano);
         inimigo.perderVida(danoReal);
+        StatusAtaque(heroi, inimigo, danoReal);
+
         if(inimigo.getVida() <= 0){
             System.out.println("O inimigo " + inimigo.getNome() + " foi derrotado!");
         }
@@ -50,6 +52,7 @@ public class Mediator {
             if(inimigo.getVida() > 0) {int dano = inimigo.atacar();
                 int danoReal = heroi.defender(dano);
                 heroi.perderVida(danoReal);
+                StatusAtaque(inimigo, heroi, danoReal); 
                 if (heroi.getVida() <= 0) {
                     System.out.println("O herói " + heroi.getNome() + " foi derrotado!");
                     batalha.statusBatalha = StatusBatalha.FIM_DA_RODADA;
@@ -70,6 +73,10 @@ public class Mediator {
         if(inimigosVivos == 0){
             batalha.statusBatalha = StatusBatalha.FIM_DA_BATALHA;
         }
+    }
+
+    public void StatusAtaque(Personagem atacante, Personagem defensor, int danoReal) {
+        System.out.println("" + atacante.getNome() + " atacou " + defensor.getNome() + " e causou " + danoReal + " de dano.");
     }
 
 
