@@ -17,13 +17,10 @@ public class Cliente {
 		//Preparação: cria os inimigos
 		med.iniciarJogo(heroi);
 
-		med.gerarRodada();
+		med.gerarBatalha();
 		//Faz ataques
 
-		
-		//Mostra atributos dos personagens (inimigos)
-		//para ver se mediador funcionou
-		med.imprimeStatus();
+
 		
 		
 		

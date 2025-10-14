@@ -9,7 +9,7 @@ public abstract class Personagem {
     protected int vida;
 	protected String status = "vivo";
     protected int danoBasico;
-    protected int rodadasParaAtacar;
+    //protected int rodadasParaAtacar;
     protected int defesaBasica;
     protected Mediator mediador;
     protected Random rand = new Random();
@@ -29,13 +29,14 @@ public abstract class Personagem {
         if(vida <= 0){
             status = "morto";
 			vida = 0;
-			System.out.println(nome + " morreu!");
         }
     }
 
+	/*
 	protected void ganhaVida(int valor) {
 		vida += valor;
 	}
+	*/
 
 	public void getStatus(){
         // Nome, dano basico, vida e rodadas que faltam para ele vai atacar 
@@ -48,14 +49,14 @@ public abstract class Personagem {
 	public int getVida(){
 		return this.vida;
 	}
-    public void atacar(Personagem inimigo) {
-		if(inimigo.getVida() == 0){
-			System.out.println("O inimigo " + inimigo.getNome() + " ja esta morto!");
-		}else{
-			mediador.atacar(this, inimigo , (int) rand.nextDouble(danoBasico*0.2 , danoBasico*1.2));
-		}
+
+
+	
+    public int atacar() {
+        int dano = (int) rand.nextDouble(danoBasico * 0.2, danoBasico * 1.2);
+        return dano;
     }
-    public void defender(int ataque){
+    public int defender(int ataque){
 		int defesa = (int) rand.nextDouble(defesaBasica*0.2 , defesaBasica*1.2);
 		int danoReal;
 		if(defesa >= ataque){
@@ -63,6 +64,6 @@ public abstract class Personagem {
 		}else{
 			danoReal = ataque - defesa;
 		}
-		mediador.defender(this, danoReal);
+		return danoReal;
     }
 }

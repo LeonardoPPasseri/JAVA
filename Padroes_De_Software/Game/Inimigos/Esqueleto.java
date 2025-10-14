@@ -3,7 +3,7 @@ package Padroes_De_Software.Game.Inimigos;
 import Padroes_De_Software.Game.Personagem.Personagem;
 import Padroes_De_Software.Game.jogo.Mediator;
 
-public class Esqueleto extends Personagem implements Inimigo{
+public class Esqueleto extends Personagem{
 	public String nome = "Esqueleto";
 
 	public Esqueleto(String nome, Mediator m) {

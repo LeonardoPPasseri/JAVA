@@ -1,104 +1,79 @@
 package Padroes_De_Software.Game.jogo;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-import Padroes_De_Software.Game.Inimigos.Esqueleto;
 import Padroes_De_Software.Game.Personagem.Personagem;
 
 public class Mediator {
 	private Personagem heroi;
-	
-	//Coleção de inimigos
-	protected List<Personagem> inimigos = new ArrayList<Personagem>();
-	protected ArrayList<Personagem> lutadores = new ArrayList<Personagem>();
+	protected ArrayList<Personagem> lutadores;
+    private Batalha batalha;
+    private int qtdInimigos;
+    private int alvo; //Não é necessario criar o alvo sempre que for atacar
 
     public void iniciarJogo(Personagem heroi) {// Método que inicia o jogo
         this.heroi = heroi;
         PrepararBatalha PrepararBatalha = new PrepararBatalha();
-        inimigos = PrepararBatalha.gerarInimigos(this);
-        lutadores = PrepararBatalha.gerarLutadores(heroi);
+        this.lutadores = PrepararBatalha.gerarLutadores(this,heroi);
     }
 
-	public void gerarRodada() {
-    int rodada = 1;
-    int alvo = 0; // Inicializa alvo aqui
-    Personagem inimigo = null; // Inicializa inimigo aqui
-    ArrayList<Personagem> inimigosMortos = new ArrayList<>(); // Cria uma lista para auxiliar a remoção
+    public void gerarBatalha() {
+        this.batalha = new Batalha(this);
+        batalha.gerarBatalha();
+    }
 
-    while (heroi.getVida() > 0 && !inimigos.isEmpty()) {
-        System.out.println("\n----- Rodada " + rodada + " -----");
-        imprimeStatus();
+    public void heroiAtaca() {
+        qtdInimigos = lutadores.size() - 1;
+        System.out.println("\nEscolha um inimigo para atacar [1 - 3]:");
+        alvo = InputHandler.readInt(qtdInimigos); // Não precisa ajustar pois o heroi é o lutador [0]. 
+        Personagem inimigo = lutadores.get(alvo);
 
-        // Usamos um iterador para evitar problemas ao remover elementos
-        Iterator<Personagem> iterator = lutadores.iterator();
+        while(inimigo.getVida() <= 0){
+            System.out.println("O inimigo " + inimigo.getNome() + " já está morto! Escolha outro alvo.");
+            System.out.println("\nEscolha um inimigo para atacar [1 - 3]:");
+            alvo = InputHandler.readInt(qtdInimigos);
+            inimigo = lutadores.get(alvo);
+        }
 
-        while (iterator.hasNext()) {
-            
-            Personagem atacante = iterator.next();
+        int dano = heroi.atacar();
+        int danoReal = inimigo.defender(dano);
+        inimigo.perderVida(danoReal);
+        if(inimigo.getVida() <= 0){
+            System.out.println("O inimigo " + inimigo.getNome() + " foi derrotado!");
+        }
+    }
 
-            // Se o atacante morreu, ele é removido da lista de lutadores
-            if (atacante.getVida() <= 0) {
-                System.out.println(atacante.getNome() + " foi removido da batalha!");
-                inimigosMortos.add(atacante);//aqui o inimigo morto é adicionado a lista
-                continue;
-            }
-
-            // Se o herói morreu, encerramos o jogo
-            if (heroi.getVida() <= 0) {
-                System.out.println("O herói morreu! Fim de jogo!");
-                return;
-            }
-
-            // Caso o atacante seja um inimigo
-            if (atacante != heroi) {
-                atacante.atacar(heroi);
-
+    public void inimigoAtaca() {
+        qtdInimigos = lutadores.size() - 1;
+        // Cada inimigo vivo ataca o herói
+        for (int i = 1; i <= qtdInimigos; i++) {
+            Personagem inimigo = lutadores.get(i);
+            if(inimigo.getVida() > 0) {int dano = inimigo.atacar();
+                int danoReal = heroi.defender(dano);
+                heroi.perderVida(danoReal);
                 if (heroi.getVida() <= 0) {
-                    System.out.println("O herói morreu! Fim de jogo!");
-                    return;
-                }
-
-            } else { // Caso o atacante seja o herói
-                if (inimigos.isEmpty()) break;
-
-                // InputHandler para ler o alvo
-                System.out.println("Escolha o inimigo para atacar [1 - " + inimigos.size() + "]:");
-                alvo = InputHandler.readInt(inimigos.size()) - 1;
-            
-                inimigo = inimigos.get(alvo);
-
-                if (inimigo.getVida() <= 0) {
-                    System.out.println("O inimigo " + inimigo.getNome() + " já está morto! Escolha outro alvo.");
-                    continue;
-                }
-
-                ((Heroi) atacante).atacar(inimigo);
-
-                // Se o inimigo morreu após o ataque, remove ele da lista de inimigos e lutadores
-                if (inimigo.getVida() <= 0) {
-                    System.out.println(inimigo.getNome() + " foi derrotado!");
-                    inimigos.remove(inimigo);
-                    inimigosMortos.add(inimigo); // Adiciona o inimigo morto à lista auxiliar
+                    System.out.println("O herói " + heroi.getNome() + " foi derrotado!");
+                    batalha.statusBatalha = StatusBatalha.FIM_DA_RODADA;
+                    break; // Sai do loop se o herói morrer
                 }
             }
         }
-        lutadores.removeAll(inimigosMortos); // Remove todos os inimigos mortos da lista de lutadores
-        inimigosMortos.clear(); // Limpa a lista auxiliar para a próxima rodada
-        rodada++;
     }
 
-    if (heroi.getVida() > 0) {
-        System.out.println("Todos os inimigos foram derrotados! Vitória!");
-    } else {
-        System.out.println("O herói morreu! Fim de jogo!");
-    }
-}
 
-	
-	public void atacar(Personagem p, Personagem inimigo, int valor) {
+    public void verificarFimBatalha(){
+        int inimigosVivos = 0;
+        for (Personagem p : lutadores) {
+            if(p.getVida() > 0 && p != heroi){
+                inimigosVivos++;
+            }
+        }
+        if(inimigosVivos == 0){
+            batalha.statusBatalha = StatusBatalha.FIM_DA_BATALHA;
+        }
+    }
+
+
+	public void atacar(Personagem inimigo, int valor) {
 		inimigo.defender(valor);
 	}
 
@@ -107,11 +82,9 @@ public class Mediator {
 		p.perderVida(danoReal);
 	}
 
-	//Opcional
-	//Método para imprimir os dados da coleção de inimigos
+	//Método para imprimir os dados da coleção de lutadores
 	public void imprimeStatus() {
-		heroi.getStatus();
-		for (Personagem p : inimigos) {
+		for (Personagem p : lutadores) {
 			p.getStatus();
 		}
 	}
