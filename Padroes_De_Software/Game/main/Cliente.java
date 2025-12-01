@@ -18,18 +18,5 @@ public class Cliente {
 		med.iniciarJogo(heroi);
 
 		med.gerarBatalha();
-		//Faz ataques
-
-
-		
-		
-		
-		
-		//Podemos também delegar ao Mediator a criação 
-		//do(s) herói(s)?
-		
-		
-		//Como poderíamos evoluir para os inimigos também
-		//poderem atacar o Herói?
 	}
 }

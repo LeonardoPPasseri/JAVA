@@ -10,6 +10,20 @@
             "type": "java",
             "name": "Cliente",
             "request": "launch",
+            "mainClass": "Padroes_De_Software.Atividade5.Cliente.Cliente",
+            "projectName": "JAVA_2c40a39d"
+        },
+        {
+            "type": "java",
+            "name": "Cliente",
+            "request": "launch",
+            "mainClass": "Padroes_De_Software.Atividade5.Cliente",
+            "projectName": "JAVA_2c40a39d"
+        },
+        {
+            "type": "java",
+            "name": "Cliente",
+            "request": "launch",
             "mainClass": "Padroes_De_Software.Game.main.Cliente",
             "projectName": "JAVA_2c40a39d"
         },
