@@ -6,13 +6,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.leonardo.aula_springboot_mongodb.domain.User;
 import com.leonardo.aula_springboot_mongodb.dto.UserDTO;
 import com.leonardo.aula_springboot_mongodb.services.UserService;
 
+import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping(value = "/users") // Define o caminho para acessar os recursos de usuário
@@ -21,26 +25,19 @@ public class UserResourced {
     @Autowired
     private UserService service;
 
+    // GET
+
     // @RequestMapping(method=RequestMethod.GET)
     @GetMapping() // Significa que esse metodo responde a requisições HTTP do tipo GET
     public ResponseEntity<List<UserDTO>> findAll() {
 
         List<User> list = service.findAll(); // Chama o método findAll() do serviço para obter a lista de usuários
 
-        List<UserDTO> listDto = list.stream().map(x -> new UserDTO(x)).collect(Collectors.toList()); // Converte a lista
-                                                                                                     // de User para uma
-                                                                                                     // lista de UserDTO
-                                                                                                     // usando Java
-                                                                                                     // Streams. O
-                                                                                                     // método map() é
-                                                                                                     // usado para
-                                                                                                     // transformar cada
-                                                                                                     // User em um
-                                                                                                     // UserDTO, e
-                                                                                                     // collect(Collectors.toList())
-                                                                                                     // coleta os
-                                                                                                     // resultados em
-                                                                                                     // uma nova lista.
+        List<UserDTO> listDto = list.stream().map(x -> new UserDTO(x)).collect(Collectors.toList());
+        // Converte a lista de usuários para uma lista de UserDTO usando Java Streams. O
+        // método map() é usado para transformar cada objeto User em um objeto UserDTO,
+        // e collect(Collectors.toList()) é usado para coletar os resultados em uma nova
+        // lista.
 
         return ResponseEntity.ok().body(listDto); // Retorna a resposta HTTP com o status 200 (OK) e o corpo contendo a
                                                   // lista de usuários
@@ -67,4 +64,16 @@ public class UserResourced {
                                                            // para UserDTO.
     }
 
+    // -------------------------------------------------------------------------------------------------------------
+
+    // POST
+
+    @PostMapping() // Significa que esse método responde a requisições HTTP do tipo POST no caminho /users/insert
+    public ResponseEntity<Void> postMethodName(@RequestBody UserDTO objDto) {
+        User obj = service.fromDTO(objDto);
+        obj = service.insert(obj);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
+        // uri é o caminho do recurso recém-criado. fromCurrentRequest() pega o caminho atual (/users), path("/{id}") adiciona um segmento de caminho para o ID do novo recurso, buildAndExpand(obj.getId()) substitui {id} pelo ID real do recurso criado, e toUri() converte isso em um objeto URI.
+        return ResponseEntity.created(uri).build();
+    } 
 }
