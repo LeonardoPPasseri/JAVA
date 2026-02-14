@@ -3,15 +3,24 @@ package com.leonardo.aula_springboot_mongodb.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "user") // Define o nome da coleção no MongoDB onde os documentos do tipo User serão armazenados.
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
-    // Para garantir que a classe seja compatível com versões futuras,
-    // é recomendado definir um serialVersionUID. Ele é usado durante o
-    // processo de desserialização para verificar se a classe é
-    // compatível com a versão do objeto serializado. Se as versões
-    // forem incompatíveis, uma InvalidClassException será lançada.
-
+    /*
+     * Para garantir que a classe seja compatível com versões futuras,
+     * é recomendado definir um serialVersionUID. Ele é usado durante o
+     * processo de desserialização para verificar se a classe é
+     * compatível com a versão do objeto serializado. Se as versões
+     * forem incompatíveis, uma InvalidClassException será lançada.
+     * 
+     */
+    
+    @Id // Indica que o campo 'id' é o identificador único do documento no MongoDB.
     private String id;
+
     private String email;
     private String name;
 
@@ -65,12 +74,14 @@ public class User implements Serializable {
         return (this.id).equals(other.id); // Usa o metodo .equals da classe String
     }
 
-    // hashCode() é o número que o Java usa para organizar objetos em estruturas
-    // rápidas, e ele precisa ser consistente com o equals(). Se dois objetos são
-    // iguais de acordo com o equals(), eles devem ter o mesmo hashCode(). Se você
-    // não sobrescrever hashCode(), pode ter problemas ao usar objetos em coleções
-    // como HashSet ou HashMap, onde a eficiência depende de um hashCode()
-    // consistente.
+    /*
+     * hashCode() é o número que o Java usa para organizar objetos em estruturas
+     * rápidas, e ele precisa ser consistente com o equals(). Se dois objetos são
+     * iguais de acordo com o equals(), eles devem ter o mesmo hashCode(). Se você
+     * não sobrescrever hashCode(), pode ter problemas ao usar objetos em coleções
+     * como HashSet ou HashMap, onde a eficiência depende de um hashCode()
+     * consistente.
+     */
     @Override
     public int hashCode() {
         return Objects.hash(id);
