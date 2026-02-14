@@ -7,15 +7,22 @@ import org.springframework.stereotype.Service;
 
 import com.leonardo.aula_springboot_mongodb.domain.User;
 import com.leonardo.aula_springboot_mongodb.repository.UserRepository;
+import com.leonardo.aula_springboot_mongodb.services.exception.ObjectNotFoundException;
 
-@Service //Essa classe é um componente de serviço e deve ser gerenciada pelo Spring
+@Service // Essa classe é um componente de serviço e deve ser gerenciada pelo Spring
 public class UserService {
 
-    @Autowired //Isso é Injeção de Dependência. Você não cria com new UserRepository().O Spring cria e gerencia pra você.
+    @Autowired // Isso é Injeção de Dependência. Você não cria com new UserRepository().O
+               // Spring cria e gerencia pra você.
     private UserRepository repo;
 
     public List<User> findAll() {
-        //Controller → Service → Repository → Banco
+        // Controller → Service → Repository → Banco
         return repo.findAll();
+    }
+
+    public User findById(String id) {
+        return repo.findById(id)
+                .orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
     }
 }
