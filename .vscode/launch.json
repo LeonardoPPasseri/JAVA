@@ -8,6 +8,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DuanSSSP",
+            "request": "launch",
+            "mainClass": "Grafos.DuanSSSP",
+            "projectName": "JAVA_2c40a39d"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Grafos.Main",
+            "projectName": "JAVA_2c40a39d"
+        },
+        {
+            "type": "java",
+            "name": "Dijkstra",
+            "request": "launch",
+            "mainClass": "Grafos.Dijkstra",
+            "projectName": "JAVA_2c40a39d"
+        },
+        {
+            "type": "java",
             "name": "Cliente",
             "request": "launch",
             "mainClass": "Padroes_De_Software.Atividade5.Cliente.Cliente",
