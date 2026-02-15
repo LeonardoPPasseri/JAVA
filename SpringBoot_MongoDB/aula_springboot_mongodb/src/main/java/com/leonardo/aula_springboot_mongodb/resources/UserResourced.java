@@ -2,6 +2,7 @@ package com.leonardo.aula_springboot_mongodb.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 @RestController
 @RequestMapping(value = "/users") // Define o caminho para acessar os recursos de usuário
@@ -69,11 +72,27 @@ public class UserResourced {
     // POST
 
     @PostMapping() // Significa que esse método responde a requisições HTTP do tipo POST no caminho /users/insert
-    public ResponseEntity<Void> postMethodName(@RequestBody UserDTO objDto) {
+    public ResponseEntity<Void> postUser(@RequestBody UserDTO objDto) {
         User obj = service.fromDTO(objDto);
         obj = service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         // uri é o caminho do recurso recém-criado. fromCurrentRequest() pega o caminho atual (/users), path("/{id}") adiciona um segmento de caminho para o ID do novo recurso, buildAndExpand(obj.getId()) substitui {id} pelo ID real do recurso criado, e toUri() converte isso em um objeto URI.
         return ResponseEntity.created(uri).build();
     } 
-}
+
+    // DELETE
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable String id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    //PUT 
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<UserDTO> updateUser(@PathVariable String id, @RequestBody UserDTO objDto) {
+        
+        User obj = service.update(id, objDto);
+        
+        return ResponseEntity.ok().body(new UserDTO(obj));
+    }
+} 

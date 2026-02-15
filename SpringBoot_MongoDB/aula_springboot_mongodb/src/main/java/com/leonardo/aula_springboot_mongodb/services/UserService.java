@@ -12,29 +12,44 @@ import com.leonardo.aula_springboot_mongodb.services.exception.ObjectNotFoundExc
 
 @Service // Essa classe é um componente de serviço e deve ser gerenciada pelo Spring
 public class UserService {
-    
+
     @Autowired // Isso é Injeção de Dependência. Você não cria com new UserRepository().O
                // Spring cria e gerencia pra você.
     private UserRepository repo;
 
-    //GET
+    // GET
     public List<User> findAll() {
         // Controller → Service → Repository → Banco
         // Banco -> Repository → Service → Controller
         return repo.findAll();
     }
 
-    //GET
+    // GET
     public User findById(String id) {
         return repo.findById(id)
                 .orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
     }
 
-    //POST
+    // POST
     public User insert(User obj) {
         return repo.insert(obj);
     }
-    public User fromDTO(UserDTO objDto) { //Caminho inverso, UserDTO para User
+
+    public User fromDTO(UserDTO objDto) { // Caminho inverso, UserDTO para User
         return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
+    }
+
+    public void delete(String id) {
+        findById(id);// Verifica a existencia do usuario
+        repo.deleteById(id);
+    }
+
+    public User update(String id, UserDTO ObjDto) {
+        User ObjUser = findById(id);
+
+        ObjUser.setName(ObjDto.getName());
+        ObjUser.setEmail(ObjDto.getEmail());
+   
+        return repo.save(ObjUser);
     }
 }
