@@ -1,9 +1,12 @@
 package com.leonardo.aula_springboot_mongodb.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user") // Define o nome da coleção no MongoDB onde os documentos do tipo User serão armazenados.
@@ -24,6 +27,10 @@ public class User implements Serializable {
     private String email;
     private String name;
 
+    @DBRef(lazy = true) //Referencia um outro objeto no mongodb
+    private List<Post> posts = new ArrayList<>();
+
+
     public User() {
 
     }
@@ -34,12 +41,20 @@ public class User implements Serializable {
         this.email = email;
     }
 
+
+    public List<Post> getPosts() {
+        return posts;
+    }
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
     public void setId(String id) {
